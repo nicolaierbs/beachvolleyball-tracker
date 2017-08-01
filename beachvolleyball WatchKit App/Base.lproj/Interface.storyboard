@@ -1,16 +1,84 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beachvolleyball_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Erkannte Aktion" id="J28-ox-uQ0"/>
+                        <group width="1" alignment="left" id="0Bs-nd-gXl">
+                            <items>
+                                <button width="0.5" alignment="left" title="Untere Annahme" id="7fw-9x-f9a">
+                                    <color key="backgroundColor" red="0.40088561576710813" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionLowerReception" destination="AgC-eL-Hgc" id="D2p-cy-afx"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Obere Annahme" id="vup-Xx-Krc">
+                                    <color key="backgroundColor" red="0.40088561576710813" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionUpperReception" destination="AgC-eL-Hgc" id="5CM-wU-xOU"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="JZq-Cg-8Or">
+                            <items>
+                                <button width="0.5" alignment="left" title="Abwehr" id="hk7-3h-vgh">
+                                    <color key="backgroundColor" red="1" green="0.53132661411704574" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </button>
+                                <button width="0.5" alignment="left" title="Block" id="fES-d1-15z">
+                                    <color key="backgroundColor" red="1" green="0.53132661411704574" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="fJ1-6n-Wwf">
+                            <items>
+                                <button width="0.5" alignment="left" title="Unteres Zuspiel" id="3fA-HN-BLs">
+                                    <color key="backgroundColor" red="0.18646851162468181" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </button>
+                                <button width="0.5" alignment="left" title="Oberes Zuspiel" id="0rC-85-mDR">
+                                    <color key="backgroundColor" red="0.18646851162468181" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="T1w-jm-8Jm">
+                            <items>
+                                <button width="0.5" alignment="left" title="Smash" id="ME0-lI-ytl">
+                                    <color key="backgroundColor" red="0.0" green="0.74922680279669152" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </button>
+                                <button width="0.5" alignment="left" title="Shot" id="kja-oR-FTS">
+                                    <color key="backgroundColor" red="0.0" green="0.74922680279669152" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="addActionBlock" destination="fES-d1-15z" id="sSk-Z9-yTr"/>
+                        <outlet property="addActionDefense" destination="hk7-3h-vgh" id="dv5-BN-FU3"/>
+                        <outlet property="addActionLowerReception" destination="7fw-9x-f9a" id="RcA-ra-01X"/>
+                        <outlet property="detectedAction" destination="J28-ox-uQ0" id="t66-25-cLK"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="194" y="302"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +99,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="beachvolleyball_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

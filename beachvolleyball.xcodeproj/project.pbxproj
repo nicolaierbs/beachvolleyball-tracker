@@ -22,6 +22,7 @@
 		2B6D40461F2F6B1D00BC0C11 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D40451F2F6B1D00BC0C11 /* ExtensionDelegate.swift */; };
 		2B6D40481F2F6B1D00BC0C11 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D40471F2F6B1D00BC0C11 /* NotificationController.swift */; };
 		2B6D404A1F2F6B1D00BC0C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6D40491F2F6B1D00BC0C11 /* Assets.xcassets */; };
+		2B6D40621F2FEE4800BC0C11 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 2B6D40611F2FEE4800BC0C11 /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		2B6D40471F2F6B1D00BC0C11 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		2B6D40491F2F6B1D00BC0C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B6D404B1F2F6B1D00BC0C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B6D40611F2FEE4800BC0C11 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				2B6D40321F2F6B1D00BC0C11 /* Interface.storyboard */,
 				2B6D40351F2F6B1D00BC0C11 /* Assets.xcassets */,
+				2B6D40611F2FEE4800BC0C11 /* AppIcon.appiconset */,
 				2B6D40371F2F6B1D00BC0C11 /* Info.plist */,
 			);
 			path = "beachvolleyball WatchKit App";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6D40361F2F6B1D00BC0C11 /* Assets.xcassets in Resources */,
+				2B6D40621F2FEE4800BC0C11 /* AppIcon.appiconset in Resources */,
 				2B6D40341F2F6B1D00BC0C11 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
