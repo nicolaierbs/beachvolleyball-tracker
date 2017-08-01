@@ -17,6 +17,11 @@ class InterfaceController: WKInterfaceController {
     
     var motionManager: CMMotionManager!
     
+    let updateInterval = 0.02
+    
+    let rotationThreshold = 10.0
+    let userAccelerationTthreshold = 2.0
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -31,14 +36,24 @@ class InterfaceController: WKInterfaceController {
         
         motionManager = CMMotionManager()
         if motionManager.isDeviceMotionAvailable {
-            motionManager.deviceMotionUpdateInterval = 1
+            motionManager.deviceMotionUpdateInterval = updateInterval
             motionManager.startDeviceMotionUpdates(to: queue) {
                 [weak self] (data: CMDeviceMotion?, error: Error?) in
-                if let gravity = data?.gravity {
-                    let rotation = atan2(gravity.x, gravity.y) - Double.pi
-                    print (rotation)
-                }
+                if let userAcceleration = data?.userAcceleration {
+                    self?.printStrongMovement(userAcceleration: userAcceleration, rotationRate: data!.rotationRate)                }
             }
+        }
+    }
+    
+    private func printStrongMovement(userAcceleration: CMAcceleration, rotationRate: CMRotationRate){
+        let totalAcceleration = sqrt(pow(userAcceleration.x, 2)+pow(userAcceleration.y, 2)+pow(userAcceleration.z, 2))
+        if(totalAcceleration>userAccelerationTthreshold){
+            print("Total: ", totalAcceleration, ", accelerationX: ", userAcceleration.x, ", accelerationY: ", userAcceleration.y, ", accelerationZ: ", userAcceleration.z)
+        }
+        
+        let totalRotation = sqrt(pow(rotationRate.x, 2)+pow(rotationRate.y, 2)+pow(rotationRate.z, 2))
+        if(totalRotation>rotationThreshold){
+            print("Total: ", totalRotation, ", rotationX: ", rotationRate.x, ", rotationY: ", rotationRate.y, ", rotationZ: ", rotationRate.z)
         }
     }
     
@@ -48,12 +63,33 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func addActionLowerReception() {
-        print("Add action: lower reception")
-        detectedAction.setText("Untere Annahme")
+        addAction(type: "Untere Annahme")
     }
     @IBAction func addActionUpperReception() {
-        print("Add action: upper reception")
-        detectedAction.setText("Obere Annahme")
+        addAction(type: "Obere Annahme")
+    }
+    @IBAction func addActionDefense() {
+        addAction(type: "Abwehr")
+    }
+    @IBAction func addActionBlock() {
+        addAction(type: "Block")
+    }
+    @IBAction func addActionBumpSet() {
+        addAction(type: "Unteres Zuspiel")
+    }
+    @IBAction func addActionHandSet() {
+        addAction(type: "Oberes Zuspiel")
+    }
+    @IBAction func addActionSmash() {
+        addAction(type: "Smash")
+    }
+    @IBAction func addActionShot() {
+        addAction(type: "Shot")
+    }
+    
+    private func addAction(type: String){
+        print("Add action: ", type)
+        detectedAction.setText(type)
     }
     
             }

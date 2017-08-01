@@ -33,39 +33,57 @@
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="JZq-Cg-8Or">
-                            <items>
-                                <button width="0.5" alignment="left" title="Abwehr" id="hk7-3h-vgh">
-                                    <color key="backgroundColor" red="1" green="0.53132661411704574" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <fontDescription key="font" type="system" pointSize="14"/>
-                                </button>
-                                <button width="0.5" alignment="left" title="Block" id="fES-d1-15z">
-                                    <color key="backgroundColor" red="1" green="0.53132661411704574" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <fontDescription key="font" type="system" pointSize="14"/>
-                                </button>
-                            </items>
-                        </group>
                         <group width="1" alignment="left" id="fJ1-6n-Wwf">
                             <items>
                                 <button width="0.5" alignment="left" title="Unteres Zuspiel" id="3fA-HN-BLs">
                                     <color key="backgroundColor" red="0.18646851162468181" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionBumpSet" destination="AgC-eL-Hgc" id="qyz-Ib-6Tj"/>
+                                    </connections>
                                 </button>
                                 <button width="0.5" alignment="left" title="Oberes Zuspiel" id="0rC-85-mDR">
                                     <color key="backgroundColor" red="0.18646851162468181" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionHandSet" destination="AgC-eL-Hgc" id="meH-V5-yhT"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
                         <group width="1" alignment="left" id="T1w-jm-8Jm">
                             <items>
-                                <button width="0.5" alignment="left" title="Smash" id="ME0-lI-ytl">
+                                <button width="0.5" height="23" alignment="left" title="Smash" id="ME0-lI-ytl">
                                     <color key="backgroundColor" red="0.0" green="0.74922680279669152" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionSmash" destination="AgC-eL-Hgc" id="69L-3B-w1e"/>
+                                    </connections>
                                 </button>
-                                <button width="0.5" alignment="left" title="Shot" id="kja-oR-FTS">
+                                <button width="0.5" height="23" alignment="left" title="Shot" id="kja-oR-FTS">
                                     <color key="backgroundColor" red="0.0" green="0.74922680279669152" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionShot" destination="AgC-eL-Hgc" id="8E8-32-oPx"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="JZq-Cg-8Or">
+                            <items>
+                                <button width="0.5" height="24" alignment="left" title="Abwehr" id="hk7-3h-vgh">
+                                    <color key="backgroundColor" red="1" green="0.53132661411704574" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionDefense" destination="AgC-eL-Hgc" id="0sN-la-Rtv"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" height="23" alignment="left" title="Block" id="fES-d1-15z">
+                                    <color key="backgroundColor" red="1" green="0.53132661411704574" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                    <connections>
+                                        <action selector="addActionBlock" destination="AgC-eL-Hgc" id="hnG-Bj-roS"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -78,7 +96,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="194" y="302"/>
+            <point key="canvasLocation" x="193.53846153846155" y="292.4871794871795"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
